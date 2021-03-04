@@ -18,7 +18,9 @@ const EmpData = () => {
             })
             .catch((error) => console.log(error));
         
-    });
+    }, []);
+
+    console.log(users);
 
     return (
         <div>
