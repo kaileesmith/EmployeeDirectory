@@ -12,7 +12,6 @@ const Table = (props) => {
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Address</th>
-                        <th scope="col">Username</th>
                         <th scope="col">DOB</th>
                     </tr>
                 </thead>
@@ -24,7 +23,7 @@ const Table = (props) => {
                         <th>{props.first}</th>
                         <th>{props.last}</th>
                         <th>{props.email}</th>
-                        <th>{props.cell}</th>
+                        <th>{props.phone}</th>
                         <th>{props.address}</th>
                         <th>{props.dob}</th>
                     </tr>

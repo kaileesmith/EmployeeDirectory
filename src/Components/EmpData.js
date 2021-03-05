@@ -10,7 +10,7 @@ const EmpData = () => {
     useEffect(()=>{
 
         const url = "https://randomuser.me/api/?results=10&";
-        const params = "exc=gender,nat,login,registered,phone,id";
+        const params = "exc=gender,nat,login,registered,id";
             const fullUrl = url + params;
             axios
             .get(fullUrl)
@@ -30,10 +30,10 @@ const EmpData = () => {
             <Table 
                 key={index}
                 image={user.picture.thumbnail}
-                phone={user.phone}
                 first={user.name.first}
                 last={user.name.last}
                 email={user.email}
+                phone={user.phone}
                 address={`${user.location.street.number} ${user.location.street.name} ${user.location.city}, ${user.location.country} ${user.location.postcode}`}
                 dob={user.dob.date}
             />
