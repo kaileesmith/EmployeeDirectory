@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Table = (props) => {
+const Table = () => {
     return (
-        <div>
             <table className="table table-bordered">
                 <thead className = "thead-dark">
                     <tr>
@@ -15,21 +14,7 @@ const Table = (props) => {
                         <th scope="col">DOB</th>
                     </tr>
                 </thead>
-                <thead>
-                    <tr>
-                        <th>
-                            <img src={props.image}></img>
-                        </th>
-                        <th>{props.first}</th>
-                        <th>{props.last}</th>
-                        <th>{props.email}</th>
-                        <th>{props.phone}</th>
-                        <th>{props.address}</th>
-                        <th>{props.dob}</th>
-                    </tr>
-                </thead>
             </table>
-        </div>
     )
 }
 

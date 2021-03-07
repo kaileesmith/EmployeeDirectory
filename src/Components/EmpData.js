@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Table from "./Table";
+import EmpInput from "./EmpInput";
 
 
 const EmpData = () => {
@@ -22,12 +23,13 @@ const EmpData = () => {
         
     }, []);
 
-    console.log(users);
+    // console.log(users);
 
     return (
         <div>
+            <Table/>
             {users.map((user, index) => (
-            <Table 
+            <EmpInput 
                 key={index}
                 image={user.picture.thumbnail}
                 first={user.name.first}
