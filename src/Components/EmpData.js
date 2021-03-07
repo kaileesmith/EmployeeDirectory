@@ -4,9 +4,12 @@ import Table from "./Table";
 import EmpInput from "./EmpInput";
 
 
+
 const EmpData = () => {
 
     const [users, setUsers] = useState([]);
+
+    let newInput = [];
 
     useEffect(()=>{
 
@@ -23,10 +26,39 @@ const EmpData = () => {
         
     }, []);
 
-    // console.log(users);
+
+        const lastSort = function (a, b){
+
+            const lName1 = a.name.last.toUpperCase();
+            const lName2 = b.name.last.toUpperCase();
+        
+            if (lName1 < lName2) {
+            return -1;
+            }
+            if (lName1 > lName2) {
+            return 1;
+            }
+            // return 0;
+        };
+    
+
+        const lastName = async function () {
+
+                const filter = await users.sort(lastSort);
+                filter.forEach((results) => {
+                    newInput.push(results);
+                });
+            
+                setUsers(newInput);
+            };
 
     return (
         <div>
+            <div className="container">
+                <h3>Sort by:</h3>
+                <button type="button" className="btn btn-secondary" onClick={() => lastName()}>
+            Last Name</button>
+            </div>
             <Table/>
             {users.map((user, index) => (
             <EmpInput 
